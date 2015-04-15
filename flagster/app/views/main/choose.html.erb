@@ -1,0 +1,8 @@
+<h2>Choose!</h2>
+
+<%= form_tag do %>
+  <div class="container-fluid countries">
+    <%= group_countries(@countries).html_safe %>
+  </div>
+    
+<% end %>
