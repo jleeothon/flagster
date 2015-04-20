@@ -1,12 +1,24 @@
 <h2>Clustered</h2>
 
 <% @clusters.each.with_index do |cluster, i| %>
-    <%= i + 1 %>:
-    <ul>
-        <% cluster.each do |flag| %>
-            <li>
+    <div class="container-fluid clustered-countries">
+        <% closed = true %>
+        <% cluster.each.with_index do |flag, j| %>
+            <% if j % 6 == 0 %>
+                <% closed = false %>
+                <div class="row">
+            <% end -%>
+            <div class="col-xs-6 col-md-4">
+                <%= image_tag("#{flag.iso}.gif") if flag.iso %>
                 <%= flag %>
-            </li>
+            </div>
+            <% if j % 6 == 5 %>
+                <% closed = true %>
+                </div>
+            <% end -%>
         <% end -%>
-    </ul>
+        <% if not closed %>
+            </div>
+        <% end -%>
+    </div>
 <% end -%>

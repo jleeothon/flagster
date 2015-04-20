@@ -2,7 +2,32 @@
 
 <%= form_tag cluster_path, method: "get" do %>
   <div class="container-fluid countries">
-    <%= group_countries(@countries).html_safe %>
+
+    
+
+    <% closed = false %>
+    <% @countries.each.with_index do |c, i| %>
+        <% if i % 6 == 0 %>
+            <% closed = false %>
+            <div class="row">
+        <% end -%>
+        <div class="col-xs-6 col-md-4">
+            <input type="checkbox" id="<%= c.name %>" name="<%= c.name %>">
+            <label for="<%= c.name %>">
+                <%= c.name %>
+            </label>
+            <%= image_tag("#{c.iso}.gif") if c.iso %>
+        </div>
+        <% if i % 6 == 5 %>
+            <% closed = true %>
+            </div> <!-- close row -->
+        <% end -%>
+    <% end -%>
+    <% if not closed %>
+        </div> <!-- close row -->
+    <% end -%>
+
+
     <div class="row">
       <div class="col-md-4">
         <%= submit_tag 'Cluster!' %>

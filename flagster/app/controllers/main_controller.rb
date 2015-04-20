@@ -6,7 +6,7 @@ class MainController < ApplicationController
   end
 
   def choose
-    @countries = Flag::all.map { |f| f.name }
+    @countries = Flag::all
   end
 
   def random

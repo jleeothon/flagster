@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150420015558) do
+ActiveRecord::Schema.define(version: 20150420032455) do
 
   create_table "flags", force: :cascade do |t|
     t.integer  "bars"
@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20150420015558) do
     t.string   "mainhue"
     t.integer  "circles"
     t.integer  "sunstars"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.string   "name"
     t.string   "landmass"
     t.string   "zone"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20150420015558) do
     t.integer  "text"
     t.integer  "topleft"
     t.integer  "botright"
+    t.string   "iso",        limit: 5
   end
 
   add_index "flags", ["name"], name: "index_flags_on_name"

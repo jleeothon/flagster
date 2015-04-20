@@ -15,6 +15,8 @@ class FlagNode < Carmenere::Node
 
   @@TextColours = %w(mainhue topleft botright).map{|s| s.to_sym}
 
+  attr_reader :iso
+
   def initialize *args
     if args.count == 1
       flag = args[0]
@@ -22,6 +24,7 @@ class FlagNode < Carmenere::Node
       attributes = @@Attributes.each.with_object({}) do |a, h|
         h[a] = flag.send a
       end
+      @iso = flag.iso
     elsif args.count == 2
       name = args[0]
       attributes = args[1]
@@ -52,15 +55,15 @@ class FlagNode < Carmenere::Node
       d = 0
       d += self.colours - other.colours
       @@BinaryColours.each do |colour|
-        d += (self.send(colour) - other.send(colour)).abs * 5
+        d += (self.send(colour) - other.send(colour)).abs * 3
       end
       (@@PrimaryShapes + @@SecondaryShapes).each do |c|
-        d += Math::sqrt((self.send(c) - self.send(c)).abs)
+        d += Math::sqrt((self.send(c) - self.send(c)).abs * 2)
       end
       @@TertiaryShapes.each do |c|
         d += (self.send(c) - (other.send(c))).abs
       end
-      d += if self.mainhue == other.mainhue then 0 else 8 end
+      d += if self.mainhue == other.mainhue then 0 else 10 end
       d += if self.topleft == other.topleft then 0 else 3 end
       d += if self.botright == other.botright then 0 else 3 end
     end
