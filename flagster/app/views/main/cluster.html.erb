@@ -1,5 +1,12 @@
 <h2>Clustered</h2>
 
-<% @countries.each do |country| %>
-    <%= country %>
+<% @clusters.each.with_index do |cluster, i| %>
+    <%= i + 1 %>:
+    <ul>
+        <% cluster.each do |flag| %>
+            <li>
+                <%= flag %>
+            </li>
+        <% end -%>
+    </ul>
 <% end -%>

@@ -1,4 +1,4 @@
-require 'flags/flag'
+require 'flags/flagnode'
 
 class MainController < ApplicationController
 
@@ -6,15 +6,23 @@ class MainController < ApplicationController
   end
 
   def choose
-    @countries = Flag.all.map { |f| f.name }
+    @countries = Flag::all.map { |f| f.name }
   end
 
   def random
   end
 
   def cluster
-    countries = Flag.where name: params.keys
-    @countries = countries.map { |f| f.name }
+    centroids = Flag::where(name: params.keys).map do |centroid|
+      FlagNode::new centroid
+    end
+    flags = Flag::all.map do |flag|
+      FlagNode::new flag
+    end
+    algorithm = Carmenere::KMeans::Algorithm::new(centroids, flags) do |cluster|
+      FlagNode::mean(cluster)
+    end
+    @clusters = algorithm.run.values
   end
 
 end
