@@ -1,0 +1,29 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+.countries {
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+}
+
+.countries label {
+    margin-left: 1em;
+}
+
+.countries .row {
+    min-height: 40px;
+}
+
+.clustered-countries {
+    padding: 20px 20px;
+    border-radius: 20px;
+    background-color: rgb(200, 200, 200);
+    margin-bottom: 40px;
+}
