@@ -11,29 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418222623) do
+ActiveRecord::Schema.define(version: 20150420015558) do
 
   create_table "flags", force: :cascade do |t|
     t.integer  "bars"
     t.integer  "stripes"
     t.integer  "colours"
-    t.boolean  "red"
-    t.boolean  "green"
-    t.boolean  "blue"
-    t.boolean  "gold"
-    t.boolean  "white"
-    t.boolean  "black"
-    t.boolean  "orange"
     t.string   "mainhue"
     t.integer  "circles"
     t.integer  "sunstars"
-    t.integer  "crescent"
-    t.boolean  "triangle"
-    t.boolean  "icon"
-    t.boolean  "animate"
-    t.boolean  "text"
-    t.string   "topleft"
-    t.string   "botright"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "name"
@@ -46,6 +32,20 @@ ActiveRecord::Schema.define(version: 20150418222623) do
     t.integer  "crosses"
     t.integer  "saltires"
     t.integer  "quarters"
+    t.integer  "red"
+    t.integer  "green"
+    t.integer  "blue"
+    t.integer  "gold"
+    t.integer  "white"
+    t.integer  "black"
+    t.integer  "orange"
+    t.integer  "crescent"
+    t.integer  "triangle"
+    t.integer  "icon"
+    t.integer  "animate"
+    t.integer  "text"
+    t.integer  "topleft"
+    t.integer  "botright"
   end
 
   add_index "flags", ["name"], name: "index_flags_on_name"
