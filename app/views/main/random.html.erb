@@ -1,1 +1,16 @@
 <h2>Random!</h2>
+
+<%= form_tag cluster_random_path, method: "get" do %>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <%= number_field_tag 'number', 1, min: 1 %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <%= submit_tag 'Cluster!' %>
+            </div>
+        </div>
+    </div>
+<% end -%>

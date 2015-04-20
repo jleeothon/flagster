@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'main/index'
   get '/random' => 'main#random'
   get '/choose' => 'main#choose'
+  get '/cluster_random' => 'main#random_cluster'
   get '/cluster' => 'main#cluster'
 
   # The priority is based upon order of creation: first created -> highest priority.
