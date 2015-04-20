@@ -1,14 +1,41 @@
-<h2>Get started</h2>
+<h2>
+    Get started
+</h2>
 <p>
-    Choose how to cluster your the flags:
+    How will you get the algorithm started?
 </p>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
-            <%= link_to 'Choose your flags!', action: 'choose' %>
+            <%= link_to 'Choose initial centroids!', action: 'choose' %>
         </div>
         <div class="col-md-6">
-            <%= link_to 'Random flags!', action: 'random' %>
+            <%= link_to 'Random centroids!', action: 'random' %>
         </div>
     </div>
 </div>
+
+<h2>
+    About
+</h2>
+<p>
+    Flagster employs a <a href="http://en.wikipedia.org/wiki/K-means_clustering">K-means clustering algorithm</a> to classify flags according to their characteristics such as number of stripes, number of bars, main color, etc. The dataset employed can be found <a href="http://archive.ics.uci.edu/ml/datasets/Flags">here</a> and was developed by was  "collected primarily from the 'Collins Gem Guide to Flags'" (Collins Publishers, 1986).
+</p>
+<p>
+    Donor:<br>
+    Richard S. Forsyth<br>
+    8 Grosvenor Avenue<br>
+    Mapperley Park<br>
+    Nottingham NG3 5DX<br>
+    0602-621676<br>
+    Date: 5/15/1990<br>
+</p>
+<p>
+    Unfortunately, the dataset is a couple of decades old at the time of its development so that the flag icons that accompany them are not all accurate.
+</p>
+<p>
+    Flagster was developed by <a href="https://github.com/jleeothon">Johnny Lee Othon</a>.
+</p>
+<p>
+    Icons for flags can be found <a href="http://www.famfamfam.com/lab/icons/flags/">here</a>.
+</p>
