@@ -14,4 +14,6 @@ group :production do
 end
 
 gem 'turbolinks'
+gem 'uglifier'
+
 gem 'carmenere'
